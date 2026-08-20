@@ -163,7 +163,7 @@ export default function App() {
     setTouched(true);
     if (!name.trim() || attending === null) return;
 
-    fetch("http://localhost:5000/api/rsvp", {
+    fetch("https://project-for-basmala-psi.vercel.app/api/rsvp", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
