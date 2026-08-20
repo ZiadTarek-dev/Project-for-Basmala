@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import AnimatedFlowers from "./components/AnimatedFlowers";
 import "./App.css";
 import SparkleBurst from "./components/SparkleBurst"; // add this
+import heroImage from "./assets/Hero.jpeg";
 /* ------------------------------------------------------------------ */
 /*  Signature motif: a single-line botanical sprig, reused as the      */
 /*  cover flourish, section dividers, and RSVP card mark.              */
@@ -290,7 +291,7 @@ export default function App() {
             <div className="photo-frame" style={{ position: "relative" }}>
               <img
                 className="photo-img"
-                src="src/assets/Hero.jpeg"
+                src={heroImage}
                 alt="Placeholder — replace with a photo of the couple"
               />
               <AnimatedFlowers></AnimatedFlowers>
