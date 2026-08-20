@@ -261,7 +261,7 @@
 
 /* ---------------- Photo ---------------- */
 .photo-frame {
-  max-width: 17rem;
+  max-width: 15rem;
   margin: 0 auto;
   padding: 10px;
   border: 1px solid var(--gold-dim);
