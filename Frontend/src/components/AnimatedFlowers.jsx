@@ -3,9 +3,9 @@ import flowerImg from "../assets/flower2-decoration.webp";
 
 export default function AnimatedFlowers() {
   const flowerPositions = [
-    { side: "left", top: "-250px", width: 200, delay: 2, rotate: "-10deg" },
+    { side: "left", top: "-250px", width: 175, delay: 2, rotate: "-10deg" },
     { side: "left", top: "0px", width: 150, delay: 2.2, rotate: "-15deg" },
-    { side: "right", top: "-250px", width: 200, delay: 2, rotate: "-10deg" },
+    { side: "right", top: "-250px", width: 175, delay: 2, rotate: "-10deg" },
     { side: "right", top: "0px", width: 150, delay: 2.2, rotate: "-15deg" },
   ];
 
