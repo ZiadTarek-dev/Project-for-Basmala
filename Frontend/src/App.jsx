@@ -161,7 +161,25 @@ export default function App() {
   function handleRSVP() {
     setTouched(true);
     if (!name.trim() || attending === null) return;
-    setSubmitted(true);
+
+    fetch("http://localhost:5000/api/rsvp", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: name.trim(),
+        attending,
+        guests: attending === "yes" ? guests : null,
+        note: note.trim(),
+      }),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Request failed");
+        setSubmitted(true);
+      })
+      .catch(() => {
+        // optional: show an error state to the user here
+        alert("Something went wrong sending your RSVP. Please try again.");
+      });
   }
 
   const canSubmit = name.trim().length > 0 && attending !== null;
@@ -272,7 +290,7 @@ export default function App() {
             <div className="photo-frame" style={{ position: "relative" }}>
               <img
                 className="photo-img"
-                src="src\assets\Hero.jpeg"
+                src="src/assets/Hero.jpeg"
                 alt="Placeholder — replace with a photo of the couple"
               />
               <AnimatedFlowers></AnimatedFlowers>
